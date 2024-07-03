@@ -14,4 +14,13 @@ public class AnnotationConfigurationTest {
             System.out.println(name);
         }
     }
+
+    @Test
+    public void test_component_scan() {
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(CustomConfig.class);
+        final String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            System.out.println(beanDefinitionName);
+        }
+    }
 }
