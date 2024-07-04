@@ -2,6 +2,7 @@ package com.tw.spring.custom;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 
@@ -14,6 +15,12 @@ public class CustomConfig {
 
     @Bean
     public Person person01() {
+        return new Person();
+    }
+
+    @Conditional(OsNameCondition.class)
+    @Bean
+    public Person bill() {
         return new Person();
     }
 }

@@ -3,6 +3,8 @@ package com.tw.spring.custom;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Map;
+
 public class AnnotationConfigurationTest {
 
     @Test
@@ -22,5 +24,12 @@ public class AnnotationConfigurationTest {
         for (String beanDefinitionName : beanDefinitionNames) {
             System.out.println(beanDefinitionName);
         }
+    }
+
+    @Test
+    public void test_conditional() {
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(CustomConfig.class);
+        final Map<String, Person> beansOfType = applicationContext.getBeansOfType(Person.class);
+        System.out.println(beansOfType);
     }
 }
