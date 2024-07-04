@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Import;
     includeFilters = {
         @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {CustomTypeFilter.class}),
     })
-@Import(CustomImportSelector.class)
+@Import({CustomImportSelector.class, CustomImportBeanDefinitionRegistrar.class})
 public class CustomConfig {
 
     @Bean
