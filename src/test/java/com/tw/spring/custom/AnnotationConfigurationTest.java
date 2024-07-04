@@ -32,4 +32,13 @@ public class AnnotationConfigurationTest {
         final Map<String, Person> beansOfType = applicationContext.getBeansOfType(Person.class);
         System.out.println(beansOfType);
     }
+
+    @Test
+    public void test_import_selector() {
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(CustomConfig.class);
+        final String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            System.out.println(beanDefinitionName);
+        }
+    }
 }

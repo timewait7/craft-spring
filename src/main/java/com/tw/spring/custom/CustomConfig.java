@@ -5,12 +5,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.Import;
 
 @Configuration
 @ComponentScan(basePackages = "com.tw.spring.custom", useDefaultFilters = false,
     includeFilters = {
         @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {CustomTypeFilter.class}),
     })
+@Import(CustomImportSelector.class)
 public class CustomConfig {
 
     @Bean
