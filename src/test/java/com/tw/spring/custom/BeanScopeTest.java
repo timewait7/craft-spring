@@ -17,4 +17,10 @@ public class BeanScopeTest {
         final Object li4 = applicationContext.getBean("li4");
         applicationContext.close();
     }
+
+    @Test
+    public void test_initializing_disposable_bean() {
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ScopeConfig.class);
+        applicationContext.close();
+    }
 }

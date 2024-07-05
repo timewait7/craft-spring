@@ -17,4 +17,9 @@ public class ScopeConfig {
     public Person li4() {
         return Person.builder().name("li4").build();
     }
+
+    @Bean
+    public Student student() {
+        return new Student();
+    }
 }
