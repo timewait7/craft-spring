@@ -22,4 +22,9 @@ public class ScopeConfig {
     public Student student() {
         return new Student();
     }
+
+    @Bean
+    public Teacher teacher() {
+        return new Teacher();
+    }
 }

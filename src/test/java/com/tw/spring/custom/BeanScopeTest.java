@@ -23,4 +23,16 @@ public class BeanScopeTest {
         final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ScopeConfig.class);
         applicationContext.close();
     }
+
+    @Test
+    public void test_post_construct_and_pre_destroy() {
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ScopeConfig.class);
+        applicationContext.close();
+    }
+
+    @Test
+    public void test_sequence() {
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SequenceConfig.class);
+        applicationContext.close();
+    }
 }
