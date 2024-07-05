@@ -10,4 +10,14 @@ public class SequenceConfig {
     public Sequence sequence() {
         return new Sequence();
     }
+
+    @Bean
+    public CustomBeanPostProcessor customBeanPostProcessor() {
+        return new CustomBeanPostProcessor();
+    }
+
+    @Bean
+    public Grade grade() {
+        return new Grade();
+    }
 }

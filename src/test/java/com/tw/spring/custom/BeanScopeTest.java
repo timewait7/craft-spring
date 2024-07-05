@@ -35,4 +35,10 @@ public class BeanScopeTest {
         final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SequenceConfig.class);
         applicationContext.close();
     }
+
+    @Test
+    public void test_custom_bean_post_processor() {
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SequenceConfig.class);
+        applicationContext.close();
+    }
 }
