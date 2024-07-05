@@ -1,0 +1,20 @@
+package com.tw.spring.custom;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class BeanScopeTest {
+
+    @Test
+    public void test_scope_singleton() {
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ScopeConfig.class);
+        applicationContext.close();
+    }
+
+    @Test
+    public void test_scope_prototype() {
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ScopeConfig.class);
+        final Object li4 = applicationContext.getBean("li4");
+        applicationContext.close();
+    }
+}

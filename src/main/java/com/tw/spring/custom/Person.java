@@ -1,5 +1,14 @@
 package com.tw.spring.custom;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Bean;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Person {
 
     String name;
@@ -28,5 +37,13 @@ public class Person {
             "name='" + name + '\'' +
             ", age=" + age +
             '}';
+    }
+
+    public void init() {
+        System.out.println("init " + name);
+    }
+
+    public void destroy() {
+        System.out.println("destroy " + name);
     }
 }
