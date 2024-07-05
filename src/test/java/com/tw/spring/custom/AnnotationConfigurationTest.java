@@ -41,4 +41,11 @@ public class AnnotationConfigurationTest {
             System.out.println(beanDefinitionName);
         }
     }
+
+    @Test
+    public void test_factory_bean() throws Exception {
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(CustomConfig.class);
+        final Object factoryBean = applicationContext.getBean("personFactoryBean");
+        System.out.println(((PersonFactoryBean) factoryBean).getObject());
+    }
 }

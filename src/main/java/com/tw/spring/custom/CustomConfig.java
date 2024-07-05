@@ -25,4 +25,9 @@ public class CustomConfig {
     public Person bill() {
         return new Person();
     }
+
+    @Bean
+    public PersonFactoryBean personFactoryBean() {
+        return new PersonFactoryBean();
+    }
 }
